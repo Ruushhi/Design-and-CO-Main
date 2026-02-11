@@ -1,0 +1,32 @@
+@import 'tailwindcss';
+
+@theme inline {
+  --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --font-serif: ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
+  --font-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', Courier, monospace;
+
+  --color-background: #fafaf9;
+  --color-foreground: #1a1a1a;
+  --color-muted: #f0ede7;
+  --color-muted-foreground: #706658;
+  --color-border: #e8e3da;
+  --color-accent: #d4a574;
+  --radius: 0rem;
+  --color-primary: #1a1a1a;
+  --color-secondary: #d4a574;
+  --color-light: #fafaf9;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
