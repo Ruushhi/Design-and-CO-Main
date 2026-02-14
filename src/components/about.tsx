@@ -18,9 +18,11 @@ export default function About() {
             <p className="text-gray-700 leading-relaxed mb-8">
               We approach every space as a balance of function, form, and feeling. Through thoughtful materials, light, and texture, we create interiors that reflect individuality while standing the test of time.
             </p>
-            <button className="px-6 py-3 bg-black text-white hover:bg-gray-800 transition-colors rounded-sm font-medium text-sm">
-              Get in Touch
-            </button>
+            <a href="#contact">
+              <button className="px-6 py-3 bg-black text-white hover:bg-gray-800 transition-colors rounded-sm font-medium text-sm">
+                Get in Touch
+              </button>
+            </a>
           </div>
 
           <div className="space-y-6">
@@ -31,14 +33,14 @@ export default function About() {
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="grid grid-cols-3 gap-4">
+            {/* <div className="grid grid-cols-3 gap-4">
               {stats.map((stat, index) => (
                 <div key={index} className="text-center">
                   <p className="text-3xl font-light mb-1">{stat.number}</p>
                   <p className="text-xs text-gray-600 uppercase tracking-wider">{stat.label}</p>
                 </div>
               ))}
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

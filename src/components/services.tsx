@@ -3,12 +3,12 @@ export default function Services() {
     {
       title: 'Residential Interior Design',
       description: 'We create spaces that reflect your lifestyle, blending comfort, elegance, and timeless design principles. From bedroom sanctuaries to living spaces, we craft homes that tell your story.',
-      image: '/service-01.jpg',
+      image: '/public/livingoom_02.webp',
     },
     {
       title: 'Commercial Space Planning',
       description: 'We design purposeful environments that enhance brand identity and improve the way people work, connect, and collaborate. Creating inspiring workspaces that elevate productivity.',
-      image: '/service-02.jpg',
+      image: '/public/20220925111347_IMG_2454.webp',
     },
     {
       title: 'Full Renovation Services',

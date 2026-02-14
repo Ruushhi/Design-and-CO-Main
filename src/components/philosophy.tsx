@@ -4,7 +4,7 @@ export default function Philosophy() {
       title: 'Minimalism',
       description:
         'Clean lines and thoughtful restraint. Every element serves a purpose and enhances the overall harmony of the space.',
-      image: '/philosophy-01.jpg',
+      image: '/public/living-room-luxury-interior-design_0_1200.jpg.webp',
     },
     {
       title: 'Authenticity',
@@ -16,7 +16,7 @@ export default function Philosophy() {
       title: 'Timelessness',
       description:
         'Quality over trends. We design with intention, ensuring each decision stands the test of time in both style and quality.',
-      image: '/philosophy-03.jpg',
+      image: '/public/classic-kitchen-cabinets.jpg',
     },
   ];
 

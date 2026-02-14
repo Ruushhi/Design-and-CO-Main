@@ -1,9 +1,9 @@
 export default function FeaturedWorks() {
   const works = [
-    { id: 1, title: 'Minimal Living', category: 'Residential', image: '/project-01.jpg' },
-    { id: 2, title: 'Modern Kitchen', category: 'Residential', image: '/project-02.jpg' },
-    { id: 3, title: 'Luxury Bedroom', category: 'Residential', image: '/project-03.jpg' },
-    { id: 4, title: 'Creative Studio', category: 'Commercial', image: '/project-04.jpg' },
+    { id: 1, title: 'Minimal Living', category: 'Residential', image: '/public/living room.avif' },
+    { id: 2, title: 'Modern Kitchen', category: 'Residential', image: '/public/dining_room.webp' },
+    { id: 3, title: 'Luxury Bedroom', category: 'Residential', image: '/public/bedroom.webp' },
+    { id: 4, title: 'Creative Studio', category: 'Commercial', image: '/public/commercial.webp' },
   ];
 
   return (
@@ -38,11 +38,11 @@ export default function FeaturedWorks() {
           ))}
         </div>
 
-        <div className="flex justify-center">
+        {/* <div className="flex justify-center">
           <button className="px-8 py-3 bg-gray-900 text-white hover:bg-amber-700 transition-colors text-sm font-medium tracking-wide">
             View All Projects
           </button>
-        </div>
+        </div> */}
       </div>
     </section>
   );

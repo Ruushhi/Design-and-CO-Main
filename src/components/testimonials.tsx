@@ -3,8 +3,6 @@
 export default function Testimonials() {
   const testimonial = {
     text: 'This team completely understood our vision and transformed our home into something we only dreamed of. Every detail is perfect and reflects our lifestyle beautifully.',
-    author: 'Sarah & James',
-    role: 'Homeowners',
   };
 
   return (
@@ -28,14 +26,7 @@ export default function Testimonials() {
               "{testimonial.text}"
             </p>
 
-            <div>
-              <p className="font-medium text-lg text-gray-900">
-                {testimonial.author}
-              </p>
-              <p className="text-sm text-gray-600 mt-1">
-                {testimonial.role}
-              </p>
-            </div>
+          
           </div>
         </div>
       </div>

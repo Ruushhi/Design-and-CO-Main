@@ -1,11 +1,14 @@
 'use client';
 
 import React, { useState } from "react";
+import emailjs from "@emailjs/browser";
 
 export default function Contact() {
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    phone: '',
     message: '',
   });
 
@@ -23,23 +26,29 @@ export default function Contact() {
     setLoading(true);
 
     try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        {
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          message: formData.message,
         },
-        body: JSON.stringify(formData),
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      );
+
+      alert("✅ Message sent successfully!");
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        message: "",
       });
 
-      if (res.ok) {
-        alert("Message sent successfully!");
-        setFormData({ name: "", email: "", message: "" });
-      } else {
-        alert("Something went wrong. Please try again.");
-      }
     } catch (error) {
-      console.error(error);
-      alert("Error sending message");
+      console.error("EmailJS Error:", error);
+      alert("❌ Error sending message. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -48,26 +57,31 @@ export default function Contact() {
   return (
     <footer id="contact" className="bg-gray-900 text-white py-24 px-6">
       <div className="max-w-7xl mx-auto">
+
+        {/* Heading */}
         <div className="text-center mb-20">
-          <p className="text-xs text-amber-700 uppercase tracking-widest mb-4 font-semibold">Contact</p>
+          <p className="text-xs text-amber-700 uppercase tracking-widest mb-4 font-semibold">
+            Contact
+          </p>
           <h2 className="text-5xl md:text-6xl font-light mb-6">
             Let's Create <span className="text-amber-700">Something</span> Amazing
           </h2>
           <p className="text-xl text-gray-400 font-light max-w-2xl mx-auto">
-            Have a project in mind? We'd love to hear about it. Get in touch with us today.
+            Have a project in mind? We'd love to hear about it.
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-20 mb-20">
-          {/* Contact Info */}
+
+          {/* Left Side Info */}
           <div className="space-y-12">
+
             <div>
               <p className="text-xs uppercase tracking-widest text-amber-700 mb-4 font-semibold">
                 Address
               </p>
               <p className="text-lg text-gray-200 font-light">
-                248 Mercer Street, Suite 4B<br />
-                New York, NY 10012
+                Waghmare Square, Wakad, Pune – 411057
               </p>
             </div>
 
@@ -76,10 +90,10 @@ export default function Contact() {
                 Email
               </p>
               <a
-                href="mailto:info@design-co.com"
+                href="mailto:adilshaikh0446@gmail.com"
                 className="text-lg text-gray-200 hover:text-amber-700 transition-colors font-light"
               >
-                info@design-co.com
+                adilshaikh0446@gmail.com
               </a>
             </div>
 
@@ -88,35 +102,20 @@ export default function Contact() {
                 Phone
               </p>
               <a
-                href="tel:+12125551234"
+                href="tel:7841989702"
                 className="text-lg text-gray-200 hover:text-amber-700 transition-colors font-light"
               >
-                +1 (212) 555-1234
+                7841989702
               </a>
             </div>
 
-            <div>
-              <p className="text-xs uppercase tracking-widest text-amber-700 mb-4 font-semibold">
-                Hours
-              </p>
-              <p className="text-lg text-gray-200 font-light">
-                Mon - Fri: 9am - 6pm<br />
-                Sat - Sun: Closed
-              </p>
-            </div>
-
-            <div className="h-64 overflow-hidden mt-12">
-              <img
-                src="/contact1.jpg"
-                alt="Contact"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-              />
-            </div>
           </div>
 
           {/* Contact Form */}
           <div>
             <form onSubmit={handleSubmit} className="space-y-6">
+
+              {/* Name */}
               <div>
                 <label className="block text-xs uppercase tracking-widest text-amber-700 mb-3 font-semibold">
                   Name
@@ -127,11 +126,12 @@ export default function Contact() {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-gray-800 border border-gray-700 focus:border-amber-700 focus:outline-none text-white font-light placeholder-gray-500"
+                  className="w-full px-4 py-3 bg-gray-800 border border-gray-700 focus:border-amber-700 focus:outline-none text-white"
                   placeholder="Your name"
                 />
               </div>
 
+              {/* Email */}
               <div>
                 <label className="block text-xs uppercase tracking-widest text-amber-700 mb-3 font-semibold">
                   Email
@@ -142,11 +142,29 @@ export default function Contact() {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-gray-800 border border-gray-700 focus:border-amber-700 focus:outline-none text-white font-light placeholder-gray-500"
+                  className="w-full px-4 py-3 bg-gray-800 border border-gray-700 focus:border-amber-700 focus:outline-none text-white"
                   placeholder="your@email.com"
                 />
               </div>
 
+              {/* Phone */}
+              <div>
+                <label className="block text-xs uppercase tracking-widest text-amber-700 mb-3 font-semibold">
+                  Phone
+                </label>
+                <input
+                  type="tel"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  required
+                  pattern="[0-9]{10}"
+                  className="w-full px-4 py-3 bg-gray-800 border border-gray-700 focus:border-amber-700 focus:outline-none text-white"
+                  placeholder="10 digit mobile number"
+                />
+              </div>
+
+              {/* Message */}
               <div>
                 <label className="block text-xs uppercase tracking-widest text-amber-700 mb-3 font-semibold">
                   Message
@@ -157,29 +175,24 @@ export default function Contact() {
                   onChange={handleChange}
                   required
                   rows={5}
-                  className="w-full px-4 py-3 bg-gray-800 border border-gray-700 focus:border-amber-700 focus:outline-none text-white font-light placeholder-gray-500 resize-none"
+                  className="w-full px-4 py-3 bg-gray-800 border border-gray-700 focus:border-amber-700 focus:outline-none text-white resize-none"
                   placeholder="Tell us about your project..."
                 />
               </div>
 
+              {/* Submit Button */}
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full px-8 py-4 bg-amber-700 text-white hover:bg-amber-800 transition-colors font-semibold text-sm tracking-wide mt-8 disabled:opacity-50"
+                className="w-full px-8 py-4 bg-amber-700 text-white hover:bg-amber-800 transition-colors font-semibold disabled:opacity-50"
               >
                 {loading ? "Sending..." : "Send Message"}
               </button>
+
             </form>
           </div>
         </div>
 
-        {/* Footer */}
-        <div className="border-t border-gray-800 pt-12 text-center">
-          <p className="text-white text-3xl font-light mb-6">DESIGN & CO</p>
-          <p className="text-gray-500 text-xs">
-            © 2024 Design & Co. All rights reserved.
-          </p>
-        </div>
       </div>
     </footer>
   );

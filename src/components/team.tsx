@@ -20,7 +20,7 @@ export default function Team() {
 
   return (
     <section id="team" className="py-20 px-6 bg-white">
-      <div className="max-w-7xl mx-auto">
+      {/* <div className="max-w-7xl mx-auto">
         <h2 className="text-4xl md:text-5xl font-light mb-16 text-center">
           The Minds Behind<br />the Design
         </h2>
@@ -41,7 +41,7 @@ export default function Team() {
             </div>
           ))}
         </div>
-      </div>
+      </div> */}
     </section>
   );
 }

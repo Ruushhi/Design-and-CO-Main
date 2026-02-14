@@ -11,7 +11,7 @@ export default function Header() {
     { label: 'About', href: '#about' },
     { label: 'Services', href: '#services' },
     { label: 'Philosophy', href: '#philosophy' },
-    { label: 'Team', href: '#team' },
+    // { label: 'Team', href: '#team' },
     { label: 'FAQ', href: '#faq' },
     { label: 'Contact', href: '#contact' },
   ];
@@ -38,9 +38,11 @@ export default function Header() {
 
         {/* CTA Button & Mobile Menu */}
         <div className="flex items-center gap-4 md:gap-6">
+          <a href="#contact"> 
           <button className="hidden md:flex px-6 py-2 bg-gray-900 text-white hover:bg-amber-700 transition-colors text-xs font-semibold tracking-widest">
             Book Now
           </button>
+          </a>
           <button
             className="md:hidden text-gray-900"
             onClick={() => setIsOpen(!isOpen)}
@@ -64,9 +66,11 @@ export default function Header() {
                 {item.label}
               </a>
             ))}
+            <a href="#contact"> 
             <button className="w-full mt-6 px-6 py-3 bg-gray-900 text-white hover:bg-amber-700 transition-colors text-xs font-semibold tracking-widest">
               Book Now
             </button>
+            </a>
           </div>
         </div>
       )}
