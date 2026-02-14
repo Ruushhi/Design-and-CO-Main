@@ -1,9 +1,9 @@
 export default function FeaturedWorks() {
   const works = [
-    { id: 1, title: 'Minimal Living', category: 'Residential', image: '/public/living room.avif' },
-    { id: 2, title: 'Modern Kitchen', category: 'Residential', image: '/public/dining_room.webp' },
-    { id: 3, title: 'Luxury Bedroom', category: 'Residential', image: '/public/bedroom.webp' },
-    { id: 4, title: 'Creative Studio', category: 'Commercial', image: '/public/commercial.webp' },
+    { id: 1, title: 'Minimal Living', category: 'Residential', image: '/living room.avif' },
+    { id: 2, title: 'Modern Kitchen', category: 'Residential', image: '/dining_room.webp' },
+    { id: 3, title: 'Luxury Bedroom', category: 'Residential', image: '/bedroom.webp' },
+    { id: 4, title: 'Creative Studio', category: 'Commercial', image: '/commercial.webp' },
   ];
 
   return (

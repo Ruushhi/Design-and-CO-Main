@@ -3,7 +3,7 @@ export default function Services() {
     {
       title: 'Residential Interior Design',
       description: 'We create spaces that reflect your lifestyle, blending comfort, elegance, and timeless design principles. From bedroom sanctuaries to living spaces, we craft homes that tell your story.',
-      image: '/public/service-01.jpg',
+      image: '/living-room-luxury-interior-design_0_1200.jpg.webp',
     },
     {
       title: 'Commercial Space Planning',
